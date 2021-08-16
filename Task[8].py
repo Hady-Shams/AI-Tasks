@@ -36,8 +36,15 @@ with open ('Result.csv', 'w', encoding='utf-8', newline='\n')as file:
     writer.writerow(['Headline', 'Summary', 'Link']) 
     for i in range(5):
         writer.writerow([headlist[i], summarylist[i], linklist[i]])
-    
+##############################################################################
 
+### Task 3 : use selenium to open github delay 3 seconds , then click sign in ###
+import time 
 
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get("https://github.com")
+time.sleep(3)
+driver.find_element_by_link_text("Sign in").click()
     
 
